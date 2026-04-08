@@ -1,4 +1,9 @@
 package com.ProyectOne.ToDoProyect.Repository;
 
-public class TareaRepository {
+import com.ProyectOne.ToDoProyect.Model.Tarea;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TareaRepository extends JpaRepository<Tarea, Long> {
 }
