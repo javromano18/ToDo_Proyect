@@ -12,13 +12,13 @@ function TareaForm({ onTareaCreada }) {
     const nuevaTarea = { titulo, descripcion, completada };
 
     axios.post("http://localhost:8080/api/tareas", nuevaTarea)
-      .then(res => {
-        onTareaCreada(res.data);
-        setTitulo("");
-        setDescripcion("");
-        setCompletada(false);
-      })
-      .catch(err => console.error(err));
+  .then(res => {
+    onTareaCreada(res.data); // refresca desde el backend
+    setTitulo("");
+    setDescripcion("");
+    setCompletada(false);
+  })
+  .catch(err => console.error(err));
   };
 
   return (

@@ -12,8 +12,11 @@ function App() {
   }, []);
 
   const agregarTarea = (tarea) => {
-    setTareas([...tareas, tarea]);
-  };
+  axios.get("http://localhost:8080/api/tareas")
+    .then(res => setTareas(res.data))
+    .catch(err => console.error(err));
+};
+
 
   return (
     <div>
